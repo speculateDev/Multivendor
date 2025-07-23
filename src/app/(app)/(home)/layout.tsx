@@ -4,6 +4,7 @@ import { SearchFilters } from "./search-filters";
 import configPromise from "@payload-config";
 import { getPayload } from "payload";
 import { Category } from "@/payload-types";
+import { CustomCategory } from "./types";
 
 interface Props {
   children: React.ReactNode;
@@ -23,9 +24,10 @@ export default async function Layout({ children }: Props) {
       },
     },
     pagination: false,
+    sort: "name",
   });
 
-  const formattedData = data.docs.map((doc: Category) => ({
+  const formattedData: CustomCategory[] = data.docs.map((doc: Category) => ({
     ...doc,
     subcategories: (doc.subcategories?.docs ?? []).map((doc) => ({
       // depth is 1 so doc is of type Category
@@ -33,9 +35,6 @@ export default async function Layout({ children }: Props) {
       subcategories: undefined,
     })),
   }));
-
-  console.log({ formattedData });
-  console.log({ data });
 
   return (
     <div className="flex flex-col min-h-screen">
