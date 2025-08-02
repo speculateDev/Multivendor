@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { Suspense } from "react";
-import { SearchFilters } from "./search-filters";
+import { SearchFilters, SearchFiltersSkeleton } from "./search-filters";
 
 interface Props {
   children: React.ReactNode;
@@ -19,7 +19,7 @@ export default async function Layout({ children }: Props) {
       <div className="flex flex-col min-h-screen">
         <Navbar />
 
-        <Suspense fallback={<p>Loading....</p>}>
+        <Suspense fallback={<SearchFiltersSkeleton />}>
           <SearchFilters />
         </Suspense>
 
