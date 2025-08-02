@@ -1,4 +1,3 @@
-/*
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
@@ -15,8 +14,8 @@ export default function ClientGreeting() {
 
   return <pre>{JSON.stringify(categories.data)}</pre>;
 }
-*/
 
+/*
 import { getQueryClient, trpc } from "@/trpc/server";
 
 export default async function ClientGreeting() {
@@ -28,3 +27,4 @@ export default async function ClientGreeting() {
 
   return <pre>{JSON.stringify(categories)}</pre>;
 }
+*/
