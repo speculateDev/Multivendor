@@ -3,13 +3,13 @@ import Link from "next/link";
 
 import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { CustomCategory } from "../types";
 import { Button } from "@/components/ui/button";
 import { useDropdownPosition } from "./use-dropdown-position";
 import SubcategoryMenu from "./SubcategoryMenu";
+import { CategoriesGetManyOutput } from "@/modules/categories/types";
 
 interface Props {
-  category: CustomCategory;
+  category: CategoriesGetManyOutput[1];
   isActive?: boolean;
   isNavigationHovered?: boolean;
 }
