@@ -37,7 +37,7 @@
 
     - Uses a ResizeObserver to recalculate whenever the container size changes.
 
-## 2. Sidebar Navigation Logic (in categories-sidebar.tsx)
+## Sidebar Navigation Logic (in categories-sidebar.tsx)
 
     Purpose: Handles navigation and display of categories in a sidebar, including subcategories.
 
@@ -56,3 +56,34 @@
 
     Sidebar State:
     Closes the sidebar after navigation (handleOpenChange(false)).
+
+# tRPC Boilerplate Documentation
+
+## Key Files and Their Purposes:
+
+1. **`server.ts`**:
+   - Initializes the tRPC server.
+   - Defines the router and middleware (e.g., logging, authentication).
+
+2. **`client.tsx`**:
+   - Configures the tRPC client for React.
+   - Uses `httpBatchLink` for request batching.
+   - Integrates with React via `trpc.Provider`.
+
+3. **`query-client.ts`**:
+   - Sets up the React Query client (used by tRPC).
+   - Configures default options (e.g., retry behavior, stale time).
+
+4. **`init.ts`**:
+   - Contains type definitions and helper functions.
+   - Ensures type safety between client and server.
+
+5. **`routers/`**:
+   - Defines API endpoints using procedures (`query`, `mutation`, `subscription`).
+   - Supports nested routers for modularity.
+   - Includes input validation (e.g., Zod).
+
+   - typescript any: { - the result of fetching (check home page.tsx -- server fetch commit) => should have the type that is ascribed in modules/categories/server/procedures.ts  
+     }
+
+. **`Client fetching`**: - As opposed to to server => a route must be created : api/trpc/[trpc]/route.ts
