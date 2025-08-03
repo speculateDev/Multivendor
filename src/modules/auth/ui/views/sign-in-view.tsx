@@ -5,7 +5,7 @@ import { Poppins } from "next/font/google";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useTRPC } from "@/trpc/client";
+// import { useTRPC } from "@/trpc/client";
 
 import { useMutation } from "@tanstack/react-query";
 
@@ -22,10 +22,10 @@ import {
 } from "@/components/ui/form";
 
 import { loginSchema } from "../../schemas";
-import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import z from "zod";
+import { cn } from "@/lib/utils";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -33,19 +33,32 @@ const poppins = Poppins({
 });
 
 function SingInView() {
-  const trpc = useTRPC();
   const router = useRouter();
 
-  const login = useMutation(
-    trpc.auth.login.mutationOptions({
-      onError: (error) => {
-        toast.error(error.message);
-      },
-      onSuccess: () => {
-        router.push("/");
-      },
-    })
-  );
+  const login = useMutation({
+    mutationFn: async (values: z.infer<typeof loginSchema>) => {
+      const response = await fetch("/api/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || "Login failed");
+      }
+
+      return response.json();
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+    onSuccess: () => {
+      router.push("/");
+    },
+  });
 
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
