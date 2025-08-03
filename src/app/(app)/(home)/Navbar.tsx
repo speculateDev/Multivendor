@@ -106,7 +106,8 @@ function Navbar() {
           variant="default"
           className="border-l border-t-0 border-b-0 border-r-0 px-12 h-full rounded-none bg-black text-white hover:bg-pink-400 hover:text-black transition-colors text-lg"
         >
-          <Link href="/sign-up">Start Selling</Link>
+
+          <Link href="/signup">Start Selling</Link>
         </Button>
       </div>
 
