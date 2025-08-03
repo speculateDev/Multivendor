@@ -4,8 +4,6 @@ import { authRouter } from "@/modules/auth/server/procedures";
 
 export const appRouter = createTRPCRouter({
   auth: authRouter,
-
-export const appRouter = createTRPCRouter({
   categories: categoriesRouter,
 });
 
