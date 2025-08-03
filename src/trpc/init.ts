@@ -25,6 +25,8 @@ const t = initTRPC.create({
 // Base router and procedure helpers
 export const createTRPCRouter = t.router;
 export const createCallerFactory = t.createCallerFactory;
+
+// this is how you add a procedure to a the base one
 export const baseProcedure = t.procedure.use(async ({ next }) => {
   const payload = await getPayload({
     config: configPromise,
