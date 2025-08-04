@@ -40,7 +40,6 @@ function NavbarSidebar({ open, items, onOpenChange }: Props) {
           <div className="border-t">
             <Link
               className="w-full p-4 text-left hover:bg-black hover:text-white flex items-center text-base font-medium"
-
               href="/login"
             >
               Sign In
