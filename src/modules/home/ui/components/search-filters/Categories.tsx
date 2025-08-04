@@ -21,7 +21,7 @@ function Categories({ data }: Props) {
   const [isAnyHovered, setIsAnyHovered] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const activeCategory = "music-theory";
+  const activeCategory = "all";
 
   const activeCategoryIndex = data.findIndex(
     (category) => category.slug === activeCategory
