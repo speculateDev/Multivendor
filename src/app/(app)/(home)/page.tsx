@@ -9,12 +9,12 @@ export default function Home() {
   const { data } = useQuery(trpc.auth.session.queryOptions());
   // const { data } = useQuery(trpc.auth.test.queryOptions());
 
-  console.log({ data });
+  // console.log({ data });
 
   return (
     <div>
       <p>Home</p>
-      {/* <pre>{JSON.stringify(data)}</pre> */}
+      <p>{JSON.stringify(data)}</p>
     </div>
   );
 }

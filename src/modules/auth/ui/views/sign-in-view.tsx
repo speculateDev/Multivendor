@@ -5,7 +5,6 @@ import { Poppins } from "next/font/google";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useTRPC } from "@/trpc/client";
 
 import { useMutation } from "@tanstack/react-query";
 
@@ -22,10 +21,12 @@ import {
 } from "@/components/ui/form";
 
 import { loginSchema } from "../../schemas";
-import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import z from "zod";
+import { cn } from "@/lib/utils";
+import { useTRPC } from "@/trpc/client";
+import { useQueryClient } from "@tanstack/react-query";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -33,15 +34,19 @@ const poppins = Poppins({
 });
 
 function SingInView() {
-  const trpc = useTRPC();
   const router = useRouter();
+  const trpc = useTRPC();
+
+  const queryClient = useQueryClient();
 
   const login = useMutation(
     trpc.auth.login.mutationOptions({
       onError: (error) => {
         toast.error(error.message);
       },
-      onSuccess: () => {
+
+      onSuccess: async () => {
+        await queryClient.invalidateQueries(trpc.auth.session.queryFilter());
         router.push("/");
       },
     })
