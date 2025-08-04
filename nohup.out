@@ -1,0 +1,36 @@
+MESA-INTEL: warning: Ivy Bridge Vulkan support is incomplete
+libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+[90m[main 2025-08-04T19:28:12.503Z][0m updateURL https://api2.cursor.sh/updates/api/update/linux-x64/cursor/0.50.5/bee0a32e045629df36864a563f8a8093ca37cf10adf52e2f10c5c5cea0a78802/stable
+[90m[main 2025-08-04T19:28:12.504Z][0m update#setState idle
+[3054:0804/202815.895491:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+[3054:0804/202815.907188:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 2 times!
+[90m[main 2025-08-04T19:28:42.506Z][0m update#setState checking for updates
+[3054:0804/202847.270385:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 3 times!
+[91m[main 2025-08-04T19:29:22.622Z][0m [network] #1: https://api2.cursor.sh/updates/api/update/linux-x64/cursor/0.50.5/bee0a32e045629df36864a563f8a8093ca37cf10adf52e2f10c5c5cea0a78802/stable - error undefined net::ERR_NAME_NOT_RESOLVED
+[91m[main 2025-08-04T19:29:22.623Z][0m update#isLatestVersion(): failed to check for updates
+[91m[main 2025-08-04T19:29:22.623Z][0m Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:118774)
+    at SimpleURLLoaderWrapper.emit (node:events:518:28)
+[91m[main 2025-08-04T19:29:22.633Z][0m [network] #2: https://api2.cursor.sh/updates/api/update/linux-x64/cursor/0.50.5/bee0a32e045629df36864a563f8a8093ca37cf10adf52e2f10c5c5cea0a78802/stable - error undefined net::ERR_NAME_NOT_RESOLVED
+[91m[main 2025-08-04T19:29:22.634Z][0m update#isLatestVersion(): failed to check for updates
+[91m[main 2025-08-04T19:29:22.638Z][0m Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:118774)
+    at SimpleURLLoaderWrapper.emit (node:events:518:28)
+[91m[main 2025-08-04T19:29:22.646Z][0m [network] #3: https://api2.cursor.sh/updates/api/update/linux-x64/cursor/0.50.5/bee0a32e045629df36864a563f8a8093ca37cf10adf52e2f10c5c5cea0a78802/stable - error undefined net::ERR_NAME_NOT_RESOLVED
+[91m[main 2025-08-04T19:29:22.652Z][0m Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:118774)
+    at SimpleURLLoaderWrapper.emit (node:events:518:28)
+[90m[main 2025-08-04T19:29:22.654Z][0m update#setState idle
+[2962:0804/210857.921546:ERROR:atom_cache.cc(229)] Add chromium/from-privileged to kAtomsToCache
+[90m[main 2025-08-04T20:19:10.387Z][0m Extension host with pid 3144 exited with code: 0, signal: unknown.
+[91m[main 2025-08-04T20:19:10.603Z][0m [UtilityProcess id: 1, type: fileWatcher, pid: 3155]: crashed with code 15 and reason 'killed'
+MESA-INTEL: warning: Ivy Bridge Vulkan support is incomplete
+libva error: /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so init failed
+[90m[main 2025-08-04T20:45:02.002Z][0m updateURL https://api2.cursor.sh/updates/api/update/linux-x64/cursor/0.50.5/bee0a32e045629df36864a563f8a8093ca37cf10adf52e2f10c5c5cea0a78802/stable
+[90m[main 2025-08-04T20:45:02.010Z][0m update#setState idle
+[8776:0804/214505.684978:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+[8776:0804/214507.022132:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 2 times!
+[8776:0804/214507.038578:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 3 times!
+[90m[main 2025-08-04T20:45:32.050Z][0m update#setState checking for updates
+[90m[main 2025-08-04T20:45:32.426Z][0m update#setState ready
+[93m[main 2025-08-04T22:10:44.923Z][0m update#checkForOutdatedUpdate - error status code when checking for outdated update 409
