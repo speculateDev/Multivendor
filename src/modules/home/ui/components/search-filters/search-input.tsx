@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Input } from "@/components/ui/input";
 import { BookmarkCheckIcon, SearchIcon } from "lucide-react";
@@ -22,9 +22,14 @@ export const SearchInput = ({
   placeholder = "Search products",
 }: Props) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [showButton, setShowButton] = useState(false);
 
   const trpc = useTRPC();
   const session = useQuery(trpc.auth.session.queryOptions());
+
+  useEffect(() => {
+    if (session.data?.user) setShowButton(true);
+  }, [session.data?.user]);
 
   return (
     <div className="flex items-center gap-2 w-full">
@@ -41,7 +46,7 @@ export const SearchInput = ({
           <ListFilterIcon />
         </Button>
 
-        {session.data?.user && (
+        {showButton && (
           <Button asChild variant="elevated">
             <Link href="/library">
               <BookmarkCheckIcon className="mr-2" />
