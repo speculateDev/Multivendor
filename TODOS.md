@@ -87,3 +87,7 @@
      }
 
 . **`Client fetching`**: - As opposed to to server => a route must be created : api/trpc/[trpc]/route.ts
+
+## 11 - Products
+
+    - In select field type for Payload CMS, to load a field instead of an id, go to the collection, then add admin field, inside the admin field add useAsTitle field then pick the field you desire
