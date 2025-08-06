@@ -7,6 +7,7 @@ import {
   ProductsList,
   ProductsListSkeleton,
 } from "@/modules/products/ui/components/products-list";
+import ProductsFilter from "@/modules/products/ui/components/products-filter";
 
 interface Props {
   params: Promise<{
@@ -27,9 +28,19 @@ async function page({ params }: Props) {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <Suspense fallback={<ProductsListSkeleton />}>
-        <ProductsList category={category} />
-      </Suspense>
+      <div className="px-4 lg:px-12 py-8 flex flex-col">
+        <div className="grid grid-cols-1 lg:grid-cols-6 xl:grid-cols-8 gap-y-6 gap-x-12">
+          <div className="lg:col-span-2 xl:col-span-2">
+            <ProductsFilter />
+          </div>
+
+          <div className="lg:col-span-4 xl:col-span-6">
+            <Suspense fallback={<ProductsListSkeleton />}>
+              <ProductsList category={category} />
+            </Suspense>
+          </div>
+        </div>
+      </div>
     </HydrationBoundary>
   );
 }
